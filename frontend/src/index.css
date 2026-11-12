@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  }
+}
+
+/* Custom Print Styles for Advisory Report */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  nav, .no-print, button, a[href^="/dashboard"], a[href^="/history"] {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+    box-shadow: none !important;
+  }
+
+  .border {
+    border-color: #cbd5e1 !important;
+  }
+}
+
+/* Animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
